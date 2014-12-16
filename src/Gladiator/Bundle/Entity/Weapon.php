@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Weapon
  * @ORM\Entity
  * @ORM\Table(name="weapons")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"net" = "Net", "trident" = "Trident"})
  * @package Gladiator\Bundle\Entity
  */
 class Weapon extends Equipement implements IAttack
