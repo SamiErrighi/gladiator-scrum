@@ -1,0 +1,5 @@
+gladiator:
+    resource: "@GladiatorBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
