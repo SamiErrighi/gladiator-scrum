@@ -80,3 +80,6 @@ fos_user:
     registration:
         form:
             type: gladiator_user_registration
+    profile:
+        form:
+            type: gladiator_user_profile

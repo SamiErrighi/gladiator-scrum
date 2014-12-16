@@ -10,5 +10,9 @@
             <tag name="form.type" alias="gladiator_user_registration" />
         </service>
 
+        <service id="gladiator_user.profile.form.type" class="User\Bundle\Form\Type\ProfileFormType">
+            <tag name="form.type" alias="gladiator_user_profile" />
+        </service>
+
     </services>
 </container>
