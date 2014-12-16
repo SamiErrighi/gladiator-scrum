@@ -24,4 +24,10 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+    /**
+    * @ORM\Column(type="date")
+    */
+    protected $birthDate;
+
 }
