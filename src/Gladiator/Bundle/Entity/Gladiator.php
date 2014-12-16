@@ -30,12 +30,12 @@ class Gladiator
     private $equipe;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Gladiator\Bundle\Entity\Armury", inversedBy="gladiators")
+     * @ORM\ManyToMany(targetEntity="Gladiator\Bundle\Entity\Equipement", inversedBy="gladiators")
      */
-    private $armuries;
+    private $equipements;
 
     public function __construct() {
-        $this->armuries = new ArrayCollection();
+        $this->equipements = new ArrayCollection();
     }
     /**
      * @return mixed
@@ -124,23 +124,5 @@ class Gladiator
     {
         $this->equipements = $equipements;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getArmuries()
-    {
-        return $this->armuries;
-    }
-
-    /**
-     * @param mixed $armuries
-     */
-    public function setArmuries($armuries)
-    {
-        $this->armuries = $armuries;
-    }
-
-
 
 }

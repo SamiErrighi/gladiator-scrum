@@ -30,12 +30,13 @@ class Equipement
     private $point;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Gladiator\Bundle\Entity\Armury", inversedBy="equipements")
+     * @ORM\ManyToMany(targetEntity="Gladiator\Bundle\Entity\Gladiator", inversedBy="equipements")
+     * @ORM\JoinTable(name="equipement_gladiators")
      */
-    private $armuries;
+    private $gladiators;
 
     public function __construct() {
-        $this->armuries = new ArrayCollection();
+        $this->gladiators = new ArrayCollection();
     }
 
     /**
@@ -81,16 +82,16 @@ class Equipement
     /**
      * @return mixed
      */
-    public function getArmuries()
+    public function getGladiators()
     {
-        return $this->armuries;
+        return $this->gladiators;
     }
 
     /**
-     * @param mixed $armuries
+     * @param mixed $gladiators
      */
-    public function setArmuries($armuries)
+    public function setGladiators($gladiators)
     {
-        $this->armuries = $armuries;
+        $this->gladiators = $gladiators;
     }
 } 
