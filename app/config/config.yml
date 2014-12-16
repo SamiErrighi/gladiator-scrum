@@ -77,3 +77,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: User\Bundle\Entity\User
+    registration:
+        form:
+            type: gladiator_user_registration
+    profile:
+        form:
+            type: gladiator_user_profile
