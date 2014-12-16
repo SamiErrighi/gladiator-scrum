@@ -8,6 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="equipements")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"equipement" = "Equipement", "weapon" = "Weapon", "armor" = "Armor"})
  * @author Sami Errighi
  */
 class Equipement
@@ -17,23 +20,23 @@ class Equipement
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected  $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected  $name;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $point;
+    protected  $point;
 
     /**
      * @ORM\ManyToMany(targetEntity="Gladiator\Bundle\Entity\Gladiator", inversedBy="equipements")
      * @ORM\JoinTable(name="equipement_gladiators")
      */
-    private $gladiators;
+    protected  $gladiators;
 
     public function __construct() {
         $this->gladiators = new ArrayCollection();
