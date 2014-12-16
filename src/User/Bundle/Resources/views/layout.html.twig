@@ -2,8 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+	<link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" />
+	{% stylesheets '@UserBundle/Resources/public/*' %}
+	    <link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+
 </head>
 <body>
+	
 {% for type, messages in app.session.flashBag.all %}
     {% for message in messages %}
         <div class="{{ type }}">
@@ -16,5 +22,8 @@
     {% block fos_user_content %}
     {% endblock fos_user_content %}
 </div>
+
+	<script type="text/javascript" src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
