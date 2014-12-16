@@ -19,6 +19,21 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Gladiator\Bundle\Entity\Equipe", mappedBy="user")
+     */
+    protected $equipes;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $lastName;
+
     public function __construct()
     {
         parent::__construct();
@@ -30,4 +45,19 @@ class User extends BaseUser
     */
     protected $birthDate;
 
+     /**
+     * @return mixed
+     */
+    public function getEquipes()
+    {
+        return $this->equipes;
+    }
+
+    /**
+     * @param mixed $equipes
+     */
+    public function setEquipes($equipes)
+    {
+        $this->equipes = $equipes;
+    }
 }
