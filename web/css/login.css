@@ -1,16 +1,20 @@
 p, span, h1, h2, h3, a {
-    color:#333333;
+    color:black;
     
 }
 
 body{
     margin: 0 auto;
-    background:#fbdb9e;
+    background: url('../img/swirl_pattern.png');
+    
 }
 
 header{
     padding: 0 30px;
+    border-bottom:8px solid #e15125;
+    background:#f16b42;
 }
+
 header h1{
     display: inline-block;
 }
@@ -86,3 +90,17 @@ header nav{
     font-size:12px;
 }
 
+/*Message succès utilisateur */
+
+.fos_user_success {
+    color:green;
+    padding:15px;
+    background:lightgreen;
+}
+
+/*menu*/
+
+
+nav ul li a {
+    color:blue;
+}
