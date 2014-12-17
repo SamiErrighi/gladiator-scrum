@@ -1,0 +1,3 @@
+User\Bundle\Entity\User:
+    constraints:
+        - Callback: [validate]
