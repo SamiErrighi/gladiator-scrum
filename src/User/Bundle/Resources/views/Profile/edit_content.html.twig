@@ -1,6 +1,13 @@
-<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
-    </div>
-</form>
+{{ include('@User/_header.html.twig') }}
+<div class="registration">
+	<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+	    {{ form_widget(form) }}
+	    <div>
+	        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
+	    </div>
+	</form>
+	<a href="{{ path('fos_user_profile_show') }}"><button>Annuler</button></a>
+	<a href="#"><button>Supprimer mon compte</button></a>
+</div>
+
+

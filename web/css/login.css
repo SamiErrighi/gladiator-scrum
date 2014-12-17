@@ -48,6 +48,10 @@ header nav{
     width: 400px;
     margin-bottom: 10px;
 }
+.registration select{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
 .registration a{
     color: #333;
 }

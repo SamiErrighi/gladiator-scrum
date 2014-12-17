@@ -2,14 +2,14 @@
 	<h1>Gladiateurs</h1>
 	<nav>
 		<ul class="nav nav-pills">
-			<li><a href="#"> Mes équipes </a></li>
-			<li><a href=""><i class="glyphicon glyphicon-plus"></i> Nouvelle</a></li>
+			<li><a href="{{ path('gladiator__equipe_index') }}"> Mes équipes </a></li>
+			<li><a href="{{ path('gladiator__equipe_create') }}"><i class="glyphicon glyphicon-plus"></i> Nouvelle</a></li>
 			<li role="presentation" class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> Mon profil <span class="caret"></span></a>
 			    <ul class="dropdown-menu" role="menu">
-			    	<li><a href="#">Voir mon profil</a></li>
-			    	<li><a href="#">Modifier mes infos</a></li>
-			    	<li><a href="#">Se déconnecter</a></li>
+			    	<li><a href="{{ path('fos_user_profile_show') }}">Voir mon profil</a></li>
+			    	<li><a href="{{ path('fos_user_profile_edit') }}">Modifier mes infos</a></li>
+			    	<li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
 			    </ul>
 			</li>
 		</ul>
