@@ -22,10 +22,6 @@ class EquipeType extends AbstractType
                 'max_length' => 100,
                 'label'      => 'Nom'
             ])
-            ->add('description', 'textarea', [
-                'required' => true,
-                'label' => 'Description'
-            ])
         ;
     }
     /**

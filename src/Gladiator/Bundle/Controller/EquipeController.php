@@ -8,6 +8,8 @@
 
 namespace Gladiator\Bundle\Controller;
 
+use Gladiator\Bundle\Entity\Equipe;
+use Gladiator\Bundle\Form\Type\EquipeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -34,6 +36,22 @@ class EquipeController extends Controller
      */
     public function createAction(Request $request)
     {
-        return [];
+        $equipe = new Equipe();
+        $equipe->setUser($this->getUser());
+        $form = $this->createForm(new EquipeType(), $equipe);
+
+        if($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if($form->isValid()) {
+                $em =  $this->getDoctrine()->getManager();
+                $em->persist($form->getData());
+                $em->flush();
+                $this->get('session')->getFlashBag()->add("success", "sssss");
+                return $this->redirect($this->generateUrl('gladiator__gladiator_index'));
+            }
+        }
+        return [
+            "form" => $form->createView()
+        ];
     }
 } 
