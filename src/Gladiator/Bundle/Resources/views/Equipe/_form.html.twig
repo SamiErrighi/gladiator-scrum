@@ -1,9 +1,11 @@
-<form method="POST">
-    {{ form_label(form.name) }}
-    {{ form_widget(form.name,{'attr': {'placeholder': 'Nom'}}) }}
+<div class="equipe_form">	
+	<form method="POST">
+	    {{ form_label(form.name) }}
+	    {{ form_widget(form.name,{'attr': {'placeholder': 'Nom'}}) }}
 
-    {{ form_label(form.description) }}
-    {{ form_widget(form.description,{'attr': {'placeholder': 'Description'}}) }}
-    {{ form_rest(form) }}
-    <input type="submit"/>
-</form>
+	    {{ form_label(form.description) }}
+	    {{ form_widget(form.description,{'attr': {'placeholder': 'Description'}}) }}
+	    {{ form_rest(form) }}
+	    <input type="submit"/>
+	</form>
+</div>

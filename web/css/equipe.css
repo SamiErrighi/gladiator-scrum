@@ -1,0 +1,17 @@
+.equipe{
+	margin: 30px;
+}
+.equipe_form{
+    width: 500px;
+    padding: 30px;
+}
+.equipe_form input[type=text], .equipe_form textarea{
+    width: 440px;
+    margin-bottom: 20px;
+    border: #DDD 1px solid;
+}
+
+.equipe .item {
+	padding: 10px;
+	border-bottom: 1px solid #DDD;
+}

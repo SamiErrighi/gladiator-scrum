@@ -1,13 +1,23 @@
 {% extends "::base.html.twig" %}
 
+
 {% block content %}
+  <div class="equipe">
+	<h1>Mes Equipes</h1>
     {% for equipe in equipes %}
-        {{ equipe.name }}
-        {{ equipe.description }}
+    <div class="item">
+      <h2>{{ equipe.name }} </h2>
+      <p>Description : {{ equipe.description }}</p>
 
-       {% for gladiator in equipe.gladiators %}
-           {{ gladiator.name }}
-       {% endfor %}
+  		<h4>Gladiateurs</h4>
+         {% for gladiator in equipe.gladiators %}
+             <p>{{ gladiator.name }}</p>
+         {% endfor %}
 
+      <h4>Statistiques</h4>
+        <p>Nombre de victoire :</p>
+        <p>Nombre de défaite :</p>
+    </div>
     {% endfor %}
+  </div>
 {% endblock %}
