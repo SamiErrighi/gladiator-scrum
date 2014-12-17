@@ -1,6 +1,13 @@
+p, span, h1, h2, h3, a {
+    color:#333333;
+    
+}
+
 body{
     margin: 0 auto;
+    background:#fbdb9e;
 }
+
 header{
     padding: 0 30px;
 }
@@ -55,3 +62,27 @@ header nav{
 .registration a{
     color: #333;
 }
+
+/*Page profile*/
+
+.fos_user_user_show {
+    padding: 30px;
+}
+
+.fos_user_user_show h2 {
+    margin-bottom: 15px;
+}
+
+.fos_user_user_show .profile-photo {
+    height:150px;
+    width:150px;
+    border:5px solid white;
+    float:left;
+    margin-right:15px;
+}
+
+.fos_user_user_show span.label {
+    color:#333333;
+    font-size:12px;
+}
+
