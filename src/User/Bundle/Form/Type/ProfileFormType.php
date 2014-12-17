@@ -24,6 +24,7 @@ class ProfileFormType extends AbstractType
     {
        $builder
             ->add('birthDate', 'birthday', array(
+                'label' => 'Date de naissance :'
                 ))
         ;
     }

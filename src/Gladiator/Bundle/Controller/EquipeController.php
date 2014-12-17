@@ -52,7 +52,7 @@ class EquipeController extends Controller
                 $em =  $this->getDoctrine()->getManager();
                 $em->persist($form->getData());
                 $em->flush();
-                $this->get('session')->getFlashBag()->add("success", "sssss");
+                $this->get('session')->getFlashBag()->add("success", "Equipe ajoutée.");
                 return $this->redirect($this->generateUrl('gladiator__equipe_index'));
             }
         }
@@ -60,4 +60,42 @@ class EquipeController extends Controller
             "form" => $form->createView()
         ];
     }
+
+    /**
+    * @Route("/update/{id}")
+    * @Template()
+    */
+    public function updateAction($id, Request $request) 
+    {
+        $equipe = $this->getDoctrine()
+                ->getRepository('GladiatorBundle:Equipe')
+                ->find($id);
+
+        if ($equipe == null) {
+            $this->get('session')->getFlashBag()->add("error", "L'équipe n'existe pas.");
+            return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+        }
+
+            $form = $this->createForm(new EquipeType(), $equipe);
+
+            if($request->isMethod('POST')) {
+                $form->handleRequest($request);
+
+                if ($form->isValid()) 
+                {
+                    //enregistrer l'objet en bdd
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($form->getData());
+                    $em->flush();
+                    
+                    $this->get('session')->getFlashBag()->add('success', "L'équipe a été modifiée.");
+                }
+                return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+            }
+
+        return [
+            "form" => $form->createView()
+        ];
+    }
+
 } 
