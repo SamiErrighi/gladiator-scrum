@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - gladiateur@localhost" uuid="fd973ee7-bd31-4a19-8d6e-4639464bb4e1">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>gladiateur.*</schema-pattern>
+      <default-schemas>gladiateur.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+

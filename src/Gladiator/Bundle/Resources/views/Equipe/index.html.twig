@@ -1,5 +1,13 @@
 {% extends "::base.html.twig" %}
 
 {% block content %}
-    test
+    {% for equipe in equipes %}
+        {{ equipe.name }}
+        {{ equipe.description }}
+
+       {% for gladiator in equipe.gladiators %}
+           {{ gladiator.name }}
+       {% endfor %}
+
+    {% endfor %}
 {% endblock %}

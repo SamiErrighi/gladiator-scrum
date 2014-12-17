@@ -26,8 +26,14 @@ class EquipeController extends Controller
      */
     public function indexAction()
     {
+        $equipes = $this->getDoctrine()
+            ->getRepository('GladiatorBundle:Equipe')
+            ->findAll()
+        ;
 
-        return [];
+        return [
+            "equipes" => $equipes
+        ];
     }
 
     /**
@@ -47,7 +53,7 @@ class EquipeController extends Controller
                 $em->persist($form->getData());
                 $em->flush();
                 $this->get('session')->getFlashBag()->add("success", "sssss");
-                return $this->redirect($this->generateUrl('gladiator__gladiator_index'));
+                return $this->redirect($this->generateUrl('gladiator__equipe_index'));
             }
         }
         return [

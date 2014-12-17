@@ -1,10 +1,9 @@
 <form method="POST">
+    {{ form_label(form.name) }}
+    {{ form_widget(form.name,{'attr': {'placeholder': 'Nom'}}) }}
 
-    {{ form_widget(form.name,{'attr': {'placeholder': 'titre'}}) }}
-
-    {{ form_widget(form.content, {'attr': {'placeholder': 'contenu'}}) }}
-    {{ form_errors(form.content) }}
-
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description,{'attr': {'placeholder': 'Description'}}) }}
     {{ form_rest(form) }}
     <input type="submit"/>
 </form>

@@ -28,7 +28,6 @@ class Equipe
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(message="La description ne peut pas être vide")
      */
     private $description;
 
