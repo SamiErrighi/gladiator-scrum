@@ -1,0 +1,54 @@
+body{
+	margin: 0 auto;
+}
+header{
+	padding: 0 30px;
+}
+header h1{
+	display: inline-block;
+}
+header nav{
+	display: inline-block;
+	height:60px;
+	padding-top: 25px;
+	float: right;
+}
+/* Login Page */
+.login{
+	width: 500px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+.login h1{
+	text-align: center;
+	margin-bottom: 30px;
+}
+.login_form{
+	width: 500px;
+	border: 1px solid #DDD;
+	padding: 30px;
+}
+.login_form input[type=text], .login_form input[type=password]{
+	width: 440px;
+}
+.login_form input[type=submit]{
+	float: right
+}
+
+/* Registration Page */
+.registration{
+	padding: 30px;
+
+}
+.registration form{	
+	width: 400px;
+	margin-bottom: 10px;
+}
+.registration input[type=text], .registration input[type=password], .registration input[type=email]{
+	width: 400px;
+	margin-bottom: 10px;
+}
+.registration a{
+	color: #333;
+}
+
