@@ -89,13 +89,35 @@ class EquipeController extends Controller
                     $em->flush();
                     
                     $this->get('session')->getFlashBag()->add('success', "L'équipe a été modifiée.");
-                }
-                return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+                    return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+                }   
             }
 
         return [
             "form" => $form->createView()
         ];
+    }
+
+    /**
+    * @Route("/delete/{id}")
+    * @Template()
+    */
+    public function deleteAction($id)
+    {   
+        $em = $this->getDoctrine()->getManager();
+        $equipe = $this->getDoctrine()
+                ->getRepository('GladiatorBundle:Equipe')
+                ->find($id);
+        
+        if($equipe == null){
+            $this->get('session')->getFlashBag()->add("error", "L'équipe n'existe pas.");
+            return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+        }
+        
+        $em ->remove($equipe);
+        $em->flush();
+        $this->get('session')->getFlashBag()->add('success', "L'équipe a bien été supprimée.");
+        return $this->redirect($this->generateUrl('gladiator__equipe_index'));
     }
 
 } 

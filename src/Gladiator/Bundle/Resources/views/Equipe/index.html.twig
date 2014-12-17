@@ -6,8 +6,11 @@
 	<h1>Mes Equipes</h1>
     {% for equipe in equipes %}
     <div class="item">
-      <h2>{{ equipe.name }} </h2>
+      <h2>{{ equipe.name }} </h2> 
       <p>Description : {{ equipe.description }}</p>
+
+      <a href="{{ path('gladiator__equipe_update', {id:equipe.id}) }}"><button>Editer</button></a>
+      <a href="{{ path('gladiator__equipe_delete', {id:equipe.id}) }}"><button>Supprimer</button></a>
 
   		<h4>Gladiateurs</h4>
          {% for gladiator in equipe.gladiators %}

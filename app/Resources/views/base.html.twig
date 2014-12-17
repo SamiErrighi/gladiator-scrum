@@ -16,6 +16,11 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
         {% block content %}
         {% endblock %}
         {% block javascripts %}{% endblock %}
