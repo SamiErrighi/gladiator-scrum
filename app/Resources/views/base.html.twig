@@ -10,6 +10,12 @@
     </head>
     <body>
         {{ include('_header.html.twig') }}
+
+   {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
         {% block content %}
         {% endblock %}
         {% block javascripts %}{% endblock %}
