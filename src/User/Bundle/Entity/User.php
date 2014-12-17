@@ -5,7 +5,7 @@ namespace User\Bundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraint as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -33,8 +33,8 @@ class User extends BaseUser
     }
 
     /**
-    * @ORM\Column(type="date")
-    */
+     * @ORM\Column(type="date")
+     */
     protected $birthDate;
 
      /**
