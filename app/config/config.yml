@@ -83,3 +83,8 @@ fos_user:
     profile:
         form:
             type: gladiator_user_profile
+
+swiftmailer:
+    transport: gmail
+    username:  sami.errighi@gmail.com
+    password:  mdp
