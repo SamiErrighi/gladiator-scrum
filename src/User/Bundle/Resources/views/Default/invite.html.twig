@@ -1,0 +1,6 @@
+<form method="POST">
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email,{'attr': {'placeholder': 'Email'}}) }}
+    {{ form_rest(form) }}
+    <input type="submit"/>
+</form>
