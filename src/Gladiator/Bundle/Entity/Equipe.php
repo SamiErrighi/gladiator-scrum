@@ -3,10 +3,11 @@
 namespace Gladiator\Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gladiator\Bundle\Validator\Constraints\UniqueNameEquipe;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gladiator\Bundle\Entity\Repository\EquipeRepository")
  * @ORM\Table(name="equipes")
  * @author Sami Errighi
  */
@@ -23,6 +24,7 @@ class Equipe
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank(message="Le nom ne peut pas être vide")
      * @Assert\Length(max="100", maxMessage="trops grand")
+     * @UniqueNameEquipe(message="Cette équipe existe déjà")
      */
     private $name;
 

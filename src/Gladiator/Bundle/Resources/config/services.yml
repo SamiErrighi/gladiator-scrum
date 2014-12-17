@@ -1,0 +1,6 @@
+services:
+    validator.unique.equipe_name:
+        class: Gladiator\Bundle\Validator\Constraints\UniqueNameEquipeValidator
+        arguments: [@doctrine.orm.entity_manager, @security.context]
+        tags:
+            - { name: validator.constraint_validator, alias: equipe_unique }
