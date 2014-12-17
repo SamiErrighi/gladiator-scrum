@@ -3,6 +3,7 @@
 namespace Gladiator\Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -20,6 +21,7 @@ class Gladiator
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le nom ne peut pas être vide")
      */
     private $name;
 

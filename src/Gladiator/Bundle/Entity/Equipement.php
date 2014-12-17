@@ -4,6 +4,7 @@ namespace Gladiator\Bundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -24,11 +25,13 @@ class Equipement
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le nom ne peut pas être vide")
      */
     protected  $name;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="Veuillez entrer un nombre de point")
      */
     protected  $point;
 
@@ -38,7 +41,8 @@ class Equipement
      */
     protected  $gladiators;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->gladiators = new ArrayCollection();
     }
 
