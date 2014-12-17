@@ -6,6 +6,7 @@ namespace User\Bundle\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\ExecutionContextInterface;
 
 /**
  * @ORM\Entity
@@ -37,6 +38,17 @@ class User extends BaseUser
      */
     protected $birthDate;
 
+    public function validate(ExecutionContextInterface $context)
+    {
+        if ($this->birthDate->format('d/m/Y') > date('d/m/Y')) {
+            $context->addViolationAt(
+                'birthDate',
+                'La date de naissance ne peut être supérieure à la date courante.',
+                array(),
+                null
+            );
+        }
+    }
      /**
      * @return mixed
      */

@@ -23,7 +23,7 @@ class ProfileFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
        $builder
-            ->add('birthDate', 'date', array(
+            ->add('birthDate', 'birthday', array(
                 ))
         ;
     }
@@ -47,7 +47,7 @@ class ProfileFormType extends AbstractType
     protected function buildUserForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('birthDate', 'date', array('label' => 'Date de naissance'))
+            ->add('birthDate', 'birthday', array('label' => 'Date de naissance'))
         ;
     }
 }
