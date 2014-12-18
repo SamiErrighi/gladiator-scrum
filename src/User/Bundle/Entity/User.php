@@ -38,17 +38,6 @@ class User extends BaseUser
      */
     protected $birthDate;
 
-    public function validate(ExecutionContextInterface $context)
-    {
-        if ($this->birthDate->format('d/m/Y') > date('d/m/Y')) {
-            $context->addViolationAt(
-                'birthDate',
-                'La date de naissance ne peut être supérieure à la date courante.',
-                array(),
-                null
-            );
-        }
-    }
      /**
      * @return mixed
      */
