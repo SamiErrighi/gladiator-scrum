@@ -46,4 +46,14 @@ class DefaultController extends Controller
             "form" => $form->createView()
         ];
     }
+    /**
+     * @Route("/remove/account")
+     */
+    public function destroyAccountAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($this->getUser());
+        $em->flush();
+        return $this->redirect($this->generateUrl('gladiator__equipe_index'));
+    }
 }
