@@ -26,13 +26,9 @@ class EquipeController extends Controller
      */
     public function indexAction()
     {
-        $equipes = $this->getDoctrine()
-            ->getRepository('GladiatorBundle:Equipe')
-            ->findAll()
-        ;
 
         return [
-            "equipes" => $equipes
+            "equipes" => $this->getUser()->getEquipes()
         ];
     }
 
