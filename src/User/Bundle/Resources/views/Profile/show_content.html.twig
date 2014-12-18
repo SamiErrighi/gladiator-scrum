@@ -5,4 +5,5 @@
     <p><span class="label">{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }} :</span> {{ user.username }}</p>
     <p><span class="label">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }} :</span> {{ user.email }}</p>
     <p><span class="label"> Date de naissance :</span> {{ user.birthDate|date('d/m/Y')}}</p>
+    <a class="btn btn-danger" href="{{ path('user__default_destroyaccount') }}">Supprimer mon compte</a>
 </div>
