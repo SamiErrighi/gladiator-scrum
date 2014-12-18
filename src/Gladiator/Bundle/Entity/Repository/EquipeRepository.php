@@ -29,4 +29,24 @@ class EquipeRepository extends EntityRepository
 
         return false;
     }
+
+    public function isUniqueUpdate($id, $value, $edit_id)
+    {
+        $result = $this->createQueryBuilder('e')
+            ->select('e.id')
+            ->where('e.user = :user')
+            ->andWhere('e.name = :name')
+            ->andWhere('e.id != :edit_id')
+            ->setParameter(':user', $id)
+            ->setParameter(':name', $value)
+            ->setParameter(':edit_id', $edit_id)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        if(null == $result) {
+            return true;
+        }
+
+        return false;
+    }
 } 
