@@ -10,8 +10,10 @@
     margin-bottom: 20px;
     border: #DDD 1px solid;
 }
-
 .equipe .item {
 	padding: 10px;
 	border-bottom: 1px solid #DDD;
+}
+.equipe_form button{
+	margin-top: 10px;
 }
