@@ -22,7 +22,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Gladiator\Bundle\Entity\Equipe", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Gladiator\Bundle\Entity\Equipe", mappedBy="user", cascade={"all"})
      */
     protected $equipes;
 
@@ -37,7 +37,7 @@ class User extends BaseUser
      * @ORM\Column(type="date")
      */
     protected $birthDate;
-    
+
      /**
      * @return mixed
      */

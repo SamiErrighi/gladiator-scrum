@@ -25,8 +25,11 @@ class DefaultController extends Controller
     public function inviteAction(Request $request)
     {
         $form = $this->createFormBuilder(null)
+            ->setAction($this->generateUrl('user__default_invite'))
+            ->setMethod('POST')
             ->add('email', 'text')
-            ->getForm();
+            ->getForm()
+        ;
 
         if($request->isMethod('POST')) {
             $form->handleRequest($request);
@@ -45,5 +48,15 @@ class DefaultController extends Controller
         return [
             "form" => $form->createView()
         ];
+    }
+    /**
+     * @Route("/remove/account")
+     */
+    public function destroyAccountAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($this->getUser());
+        $em->flush();
+        return $this->redirect($this->generateUrl('gladiator__equipe_index'));
     }
 }
