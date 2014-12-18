@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" action="{{ path('user__default_invite') }}">
     {{ form_label(form.email) }}
     {{ form_widget(form.email,{'attr': {'placeholder': 'Email'}}) }}
     {{ form_rest(form) }}

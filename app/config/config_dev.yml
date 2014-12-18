@@ -49,5 +49,5 @@ assetic:
 
 swiftmailer:
     transport: gmail
-    username:  sami.errighi@gmail.com
-    password:  monmdp
+    username:  barbarin.lpdw@gmail.com
+    password:   lpdw2014
