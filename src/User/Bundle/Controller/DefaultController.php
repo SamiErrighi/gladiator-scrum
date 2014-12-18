@@ -25,8 +25,11 @@ class DefaultController extends Controller
     public function inviteAction(Request $request)
     {
         $form = $this->createFormBuilder(null)
+            ->setAction($this->generateUrl('user__default_invite'))
+            ->setMethod('POST')
             ->add('email', 'text')
-            ->getForm();
+            ->getForm()
+        ;
 
         if($request->isMethod('POST')) {
             $form->handleRequest($request);

@@ -6,3 +6,5 @@
     <p><span class="label">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }} :</span> {{ user.email }}</p>
     <p><span class="label"> Date de naissance :</span> {{ user.birthDate|date('d/m/Y')}}</p>
 </div>
+
+{{ render(controller('UserBundle:Default:invite')) }}
